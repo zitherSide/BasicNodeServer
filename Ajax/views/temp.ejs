@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ajax</title>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>  <!--min.jsはminified 改行やスペースなどなくなってる-->
+        <script>
+            $(function(){   //$(selector)でjQuery
+                $('#btn').click( ()=> {
+                    $.ajax({        //$.ajaxでajaxのcallback設定ができる
+                        type: 'POST',
+                        url: '/ajax',
+                        dataType: 'json',
+                        success: data => $('#msg').html(data.msg),
+                        error: () => {}
+                    })
+                })
+            })
+        </script>
+    </head>
+</html>
