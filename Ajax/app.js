@@ -2,8 +2,8 @@ const express = require('express')
 const ejs = require('ejs')
 const app = express()
 
-const msg = ''
-app.engine('ejs', ejs.RenderFile)
+let msg = ''
+app.engine('ejs', ejs.renderFile)
 app.get('/', (req, res) => {
     res.render('temp.ejs', {})
 })
